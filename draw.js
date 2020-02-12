@@ -56,6 +56,7 @@ d3.range(60).forEach(function(frame){
   context.stroke();
 
   // Pipe to stdout but squash EPIPE
-  rw.writeFileSync("/dev/stdout", canvas.toBuffer());
+  //rw.writeFileSync(process.stdout, canvas.toBuffer());
+  process.stdout.write(canvas.toBuffer());
 
 });
